@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
+
+         <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            tools:context=".MainActivity"
+            android:id="@+id/MainLayout">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/machineOutput"
+                android:textSize="20sp"
+                android:enabled="true"
+                android:hint="@string/machine_output"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignRight="@+id/uomItems"
+                android:layout_alignEnd="@+id/uomItems" />
+
+             <EditText
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:inputType="numberDecimal"
+                 android:ems="10"
+                 android:id="@+id/drawRate"
+                 android:textSize="20sp"
+                 android:hint="@string/draw_rate"
+                 android:layout_alignParentStart="true"
+                 android:layout_below="@+id/machineOutput"
+                 android:layout_alignParentLeft="true" />
+
+             <Spinner
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/uomItems"
+                 android:spinnerMode="dropdown"
+                 android:layout_alignParentEnd="true"
+                 android:layout_below="@+id/drawRate"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true"/>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:textSize="20sp"
+                android:id="@+id/waterRatio"
+                android:enabled="true"
+                android:hint="@string/water_ratio"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/uomItems"
+                android:layout_alignParentLeft="true" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/chemicalRatio"
+                android:textSize="20sp"
+                android:hint="@string/chemical_ratio"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/waterRatio"
+                android:layout_alignParentLeft="true" />
+
+
+             <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calc_dilution_ratio"
+                android:id="@+id/dilutionRatioBtn"
+                android:onClick="calcDilutionRatio"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/chemicalRatio" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/preWater"
+                android:textSize="18sp"
+                android:hint="@string/pre_diluted_water"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/dilutionRatioBtn"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/preChemical"
+                android:textSize="18sp"
+                android:hint="@string/pre_diluted_chemical"
+                android:singleLine="false"
+                android:layout_below="@+id/preWater"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calc_final_dilution_ratio"
+                android:id="@+id/finalDilutionRatioBtn"
+                android:onClick="calcFinalDilutionRatio"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/preChemical"
+                android:layout_alignParentLeft="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/finalDilutionRatio"
+                android:hint="@string/final_dilution_ratio"
+                android:textSize="20sp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/finalDilutionRatioBtn"
+                android:layout_alignParentLeft="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/costPerGal"
+                android:hint="@string/cost_per_gallon"
+                android:textSize="20sp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/finalDilutionRatio"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calc_cost_per_minute"
+                android:id="@+id/costPerMinBtn"
+                android:onClick="calcCost"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/costPerGal"
+                android:layout_alignParentLeft="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/costPerOz"
+                android:textSize="20sp"
+                android:hint="@string/cost_per_ounce"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/costPerMinBtn"
+                android:layout_alignParentLeft="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/ozPerMin"
+                android:hint="@string/ounces_per_minute"
+                android:textSize="20sp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/costPerOz"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/galPerHr"
+                android:hint="@string/gallons_per_hour"
+                android:textSize="20sp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/ozPerMin"
+                android:layout_alignParentLeft="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/costPerMin"
+                android:textSize="20sp"
+                android:hint="@string/cost_per_minute"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/galPerHr"
+                android:layout_alignParentLeft="true" />
+
+         </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

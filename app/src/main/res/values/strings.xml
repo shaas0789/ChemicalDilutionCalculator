@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Chemical Calculator</string>
+    <string name="machine_output">Machine Output (gpm)</string>
+    <string name="water_ratio">Water Ratio (oz)</string>
+    <string name="chemical_ratio">Chemical Ratio (oz)</string>
+    <string name="draw_rate">Draw Rate</string>
+    <string name="calc_dilution_ratio">Calculate Dilution Ratio</string>
+    <string name="pre_diluted_water">Pre-Diluted Water (oz)</string>
+    <string name="pre_diluted_chemical">Pre-Diluted Chem (oz)</string>
+    <string name="calc_final_dilution_ratio">Calculate Final Dilution Ratio</string>
+    <string name="final_dilution_ratio">Final Dilution Ratio</string>
+    <string name="cost_per_gallon">Cost per Gal</string>
+    <string name="calc_cost_per_minute">Calculate Cost</string>
+    <string name="cost_per_ounce">Cost per Ounce</string>
+    <string name="ounces_per_minute">Ounces per Minute</string>
+    <string name="gallons_per_hour">Gallons per Hour</string>
+    <string name="cost_per_minute">Cost per Minute</string>
+    <string name="cost_per_hour">Cost per Hour</string>
+    <string name="reset_action">Reset</string>
+    <string name="help_action">Help</string>
+    <string name="about_action">About</string>
+
+</resources>
